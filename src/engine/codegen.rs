@@ -79,7 +79,7 @@ impl Generator {
         let split = Instruction::Split(self.pc, 0);
         self.insts.push(split);
 
-        self.gen_expr(e1);
+        self.gen_expr(e1)?;
 
         let jmp_addr = self.pc;
         self.insts.push(Instruction::Jump(0));
